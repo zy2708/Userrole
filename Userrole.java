@@ -4,6 +4,8 @@ import javafx.scene.control.ChoiceDialog;
 import java.util.Optional;
 import java.util.ArrayList;
 import java.util.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class Userrole extends Application {
     @Override
@@ -22,28 +24,34 @@ public class Userrole extends Application {
 
         Optional<String> result = dialog.showAndWait();
         String choice=result.get();
+
+	Alert alert= new Alert(AlertType.INFORMATION);
+	alert.setTitle("Greeting");
+	alert.setHeaderText("Hi");
         switch(choice){
             case "1. Administrator":
-               System.out.println("Welcome Administrator");
+               alert.setContentText("Welcome Administrator");
                 break;
             case "2. Faculty":
-                System.out.println("Welcome Faculty");
+                alert.setContentText("Welcome Faculty");
                 break;
             case "3. Staff":
-                System.out.println("Welcome Staff");
+                alert.setContentText("Welcome Staff");
                 break;
             case "4. Student":
-                System.out.println("Welcome Student");
+                alert.setContentText("Welcome Student");
                 break;
             case "5. Guest":
-                System.out.println("Welcome Guest");
+                alert.setContentText("Welcome Guest");
                 break;
             default:
-                System.out.println("Welcome Administrator");
+                alert.setContentText("Welcome Administrator");
         }
+	alert.showAndWait();
         
     }
 
 }
+
 
 
